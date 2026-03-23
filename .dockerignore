@@ -1,8 +1,9 @@
-FROM maven:3.9-eclipse-temurin-17
+.git
+node_modules
+target/
 
-WORKDIR /app
-COPY . .
 
-RUN mvn package -DskipTests
-
-CMD ["java", "-jar", "target/quarkus-app/quarkus-run.jar"]
+!target/*-runner
+!target/*-runner.jar
+!target/lib/*
+!target/quarkus-app/*
